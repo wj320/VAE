@@ -1,0 +1,105 @@
+================parameters===================
+{'z_dim': 32, 'channel': 64, 'kernel_size': 14, 'max_epoch': 20, 'lr': 0.01, 'save_interval': 20, 'save_img_path': 'result/conv-ks-14-lr-0.01', 'save_model_path': 'ckpt/conv-ks-14-lr-0.01', 'resume_path': '', 'log_path': 'log/conv-ks-14-lr-0.01'}
+===========network architecture==============
+('', VAEConv(
+  (conv1): Conv2d(1, 64, kernel_size=(14, 14), stride=(2, 2))
+  (conv2_mean): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1))
+  (conv2_logvar): Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1))
+  (conv3): ConvTranspose2d(32, 64, kernel_size=(1, 1), stride=(1, 1))
+  (conv4): ConvTranspose2d(64, 1, kernel_size=(14, 14), stride=(2, 2))
+))
+('conv1', Conv2d(1, 64, kernel_size=(14, 14), stride=(2, 2)))
+('conv2_mean', Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1)))
+('conv2_logvar', Conv2d(64, 32, kernel_size=(1, 1), stride=(1, 1)))
+('conv3', ConvTranspose2d(32, 64, kernel_size=(1, 1), stride=(1, 1)))
+('conv4', ConvTranspose2d(64, 1, kernel_size=(14, 14), stride=(2, 2)))
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 1, recon loss:67063.265625, KL:10708.599609, loss: 77771.867188
+Epoch 1, recon loss:-7013662.500000, KL:7809.115723, loss: -6286255.652556
+Epoch 1, recon loss:-7100356.000000, KL:5363.281250, loss: -6596795.934867
+Epoch 1, recon loss:-7082309.000000, KL:3300.538818, loss: -6734806.124280
+Epoch 1, recon loss:-7077282.500000, KL:2531.359863, loss: -6825815.296529
+==========PSNR: 0.34658312797546387===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 2, recon loss:-7200314.000000, KL:2636.584473, loss: -7197677.500000
+Epoch 2, recon loss:-7257780.000000, KL:1767.538330, loss: -7176911.123762
+Epoch 2, recon loss:-7009517.500000, KL:978.335999, loss: -7196049.144279
+Epoch 2, recon loss:-7262556.500000, KL:862.874634, loss: -7204149.835548
+Epoch 2, recon loss:-7193849.000000, KL:323.607422, loss: -7202706.559850
+==========PSNR: 0.32544103264808655===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 3, recon loss:-7133397.500000, KL:71.886993, loss: -7133325.500000
+Epoch 3, recon loss:-7004339.000000, KL:18.923197, loss: -7098804.900990
+Epoch 3, recon loss:-7117779.000000, KL:12.147762, loss: -7093524.470149
+Epoch 3, recon loss:-7001094.500000, KL:10.106085, loss: -7089016.556478
+Epoch 3, recon loss:-7108728.000000, KL:6.919922, loss: -7091496.258105
+==========PSNR: 0.33450809121131897===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 4, recon loss:-7066399.000000, KL:6.930253, loss: -7066392.000000
+Epoch 4, recon loss:-7054144.000000, KL:5.930873, loss: -7105556.658416
+Epoch 4, recon loss:-6996200.000000, KL:4.239722, loss: -7102998.291045
+Epoch 4, recon loss:-6982156.000000, KL:4.036197, loss: -7100547.632890
+Epoch 4, recon loss:-7105161.500000, KL:2.876407, loss: -7101707.436409
+==========PSNR: 0.34180566668510437===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 5, recon loss:-7124113.000000, KL:1.988898, loss: -7124111.000000
+Epoch 5, recon loss:-7246819.000000, KL:2.038305, loss: -7119718.331683
+Epoch 5, recon loss:-7010225.500000, KL:2.687757, loss: -7110098.564677
+Epoch 5, recon loss:-7124228.500000, KL:1.117830, loss: -7102729.862126
+Epoch 5, recon loss:-6991631.500000, KL:3.465354, loss: -7103098.673317
+==========PSNR: 0.35005447268486023===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 6, recon loss:-7069246.500000, KL:1.077467, loss: -7069245.500000
+Epoch 6, recon loss:-7016593.000000, KL:1.558051, loss: -7112029.386139
+Epoch 6, recon loss:-7122955.000000, KL:0.981528, loss: -7103102.037313
+Epoch 6, recon loss:-7187405.500000, KL:6.866293, loss: -7105839.300664
+Epoch 6, recon loss:-7135634.000000, KL:0.914206, loss: -7106348.553616
+==========PSNR: 0.3393428921699524===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 7, recon loss:-7207327.000000, KL:1.066606, loss: -7207326.000000
+Epoch 7, recon loss:-7022194.000000, KL:0.532952, loss: -7110484.886139
+Epoch 7, recon loss:-7033121.000000, KL:0.650274, loss: -7112346.067164
+Epoch 7, recon loss:-7045565.000000, KL:0.442770, loss: -7106761.217608
+Epoch 7, recon loss:-7073248.500000, KL:0.491512, loss: -7109301.588529
+==========PSNR: 0.33385562896728516===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 8, recon loss:-7101299.000000, KL:1.603840, loss: -7101297.500000
+Epoch 8, recon loss:-7129422.000000, KL:0.504893, loss: -7112956.599010
+Epoch 8, recon loss:-7046856.500000, KL:0.576252, loss: -7118048.343284
+Epoch 8, recon loss:-7072535.000000, KL:0.461934, loss: -7113987.390365
+Epoch 8, recon loss:-7169363.500000, KL:0.349413, loss: -7114278.789277
+==========PSNR: 0.34228846430778503===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 9, recon loss:-7126002.500000, KL:0.236976, loss: -7126002.500000
+Epoch 9, recon loss:-7249515.000000, KL:0.213392, loss: -7127849.683168
+Epoch 9, recon loss:-7115599.000000, KL:0.625517, loss: -7120842.206468
+Epoch 9, recon loss:-7194665.500000, KL:0.651594, loss: -7120673.727575
+Epoch 9, recon loss:-7059608.000000, KL:0.849478, loss: -7118324.557357
+==========PSNR: 0.3416323959827423===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 10, recon loss:-7012758.000000, KL:0.483415, loss: -7012757.500000
+Epoch 10, recon loss:-7183746.500000, KL:0.336414, loss: -7109746.935644
+Epoch 10, recon loss:-7132731.500000, KL:0.295713, loss: -7115837.151741
+Epoch 10, recon loss:-7160648.000000, KL:0.627953, loss: -7119126.935216
+Epoch 10, recon loss:-7094833.000000, KL:1.441939, loss: -7119522.698254
+==========PSNR: 0.3440379500389099===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 11, recon loss:-7047750.000000, KL:0.839379, loss: -7047749.000000
+Epoch 11, recon loss:-7167936.000000, KL:0.333222, loss: -7113226.059406
+Epoch 11, recon loss:-7123113.000000, KL:0.103911, loss: -7116436.706468
+Epoch 11, recon loss:-7232241.000000, KL:0.101784, loss: -7119154.390365
+Epoch 11, recon loss:-7070293.000000, KL:7.849705, loss: -7122258.204489
+==========PSNR: 0.33893492817878723===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 12, recon loss:-7063084.000000, KL:0.217865, loss: -7063084.000000
+Epoch 12, recon loss:-7170958.000000, KL:0.105547, loss: -7119469.836634
+Epoch 12, recon loss:-7082472.500000, KL:0.126686, loss: -7123435.940299
+Epoch 12, recon loss:-7157177.500000, KL:0.139818, loss: -7120084.725914
+Epoch 12, recon loss:-7020622.000000, KL:0.232482, loss: -7123874.302993
+==========PSNR: 0.3491898775100708===========
+mean size: torch.Size([128, 32, 8, 8]), var size: torch.Size([128, 32, 8, 8])
+Epoch 13, recon loss:-7040954.000000, KL:0.412224, loss: -7040953.500000
+Epoch 13, recon loss:-6965696.000000, KL:0.093038, loss: -7117761.242574
+Epoch 13, recon loss:-7172186.500000, KL:11.161011, loss: -7118369.111940
+Epoch 13, recon loss:-7092377.000000, KL:0.118794, loss: -7122077.817276
+Epoch 13, recon loss:-7244317.000000, KL:0.069314, loss: -7123770.079800
