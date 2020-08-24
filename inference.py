@@ -9,10 +9,10 @@ from model.model_VAE_conv import *
 os.environ["CUDA_VISIBLE_DEVICES"] = '0'
 
 cal_psnr = 1  # calculate PSNR
-use_FC = 0  # use fully connected layer
 save_real_img = 0
 
 parser = argparse.ArgumentParser()
+parser.add_argument('--use_FC', type=bool, default=0) # use FC (1) or FCN (0)
 parser.add_argument('--z_dim', type=int, default=20)  # dimension of latent variable
 parser.add_argument('--channel', type=int, default=128)  # hidden layer channel
 parser.add_argument('--kernel_size', type=int, default=28)  # conv kernel size
@@ -42,7 +42,7 @@ vae.eval()
 for batch_idx, (inputs, targets) in enumerate(testloader):
     # inputs, targets = inputs.to('cpu'), targets.to('cpu')
 
-    if use_FC:
+    if args.use_FC:
         real_imgs = torch.flatten(inputs, start_dim=1)
     else:
         real_imgs = inputs
@@ -52,14 +52,14 @@ for batch_idx, (inputs, targets) in enumerate(testloader):
 if cal_psnr:
     print('==========PSNR: {}==========='.format(psnr(gen_imgs, real_imgs, 1)))
 
-if use_FC:
+if args.use_FC:
     fake_imgs = gen_imgs.view(-1, 1, 28, 28)
 else:
     fake_imgs = gen_imgs
 save_image(fake_imgs, '{}-fake.png'.format(args.save_img_path))
 
 if save_real_img:
-    if use_FC:
+    if args.use_FC:
         real_imgs = real_imgs.view(-1,1,28,28)
     save_image(real_imgs, '{}-real.png'.format(args.save_img_path))
 
