@@ -17,10 +17,11 @@ MNIST dataset automatically downloaded from torchvision.datasets.MNIST
 
 # Experiments
 To run the FC model, execute the following:
-
+(```python
 python main.py --use_FC=1 
+```)
 
 To run the FCN model, execute the following:
-
+(```python
 python main.py --use_FC=0
-
+```)
