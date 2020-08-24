@@ -4,7 +4,7 @@ import torchvision
 import torchvision.transforms as transforms
 from torchvision.utils import save_image
 from utils import *
-from model.model import *
+from model import *
 
 os.environ["CUDA_VISIBLE_DEVICES"] = '0'
 
