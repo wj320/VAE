@@ -3,8 +3,11 @@ A Variational Autoencoder based on FC (fully connected) and FCN (fully convoluti
 
 # Requirements
 python3.8
+
 torch==1.6.0
+
 torchvision==1.7.0
+
 numpy==1.18.5
 
 
